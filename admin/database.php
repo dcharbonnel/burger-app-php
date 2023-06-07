@@ -2,10 +2,10 @@
 
 class Database {
 
-    private static $dbHost = getenv('DATABASE_HOST');
-    private static $dbName = getenv('DATABASE_NAME');
-    private static $dbUsername = getenv('DATABASE_USERNAME');
-    private static $dbUserpassword = getenv('DATABASE_PASSWORD');
+    private static $dbHost = "getenv('DATABASE_HOST')";
+    private static $dbName = "getenv('DATABASE_NAME')";
+    private static $dbUsername = "getenv('DATABASE_USERNAME')";
+    private static $dbUserpassword = "getenv('DATABASE_PASSWORD')";
     private static $connection = null;
     
     public static function connect() {
