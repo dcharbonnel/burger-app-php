@@ -9,7 +9,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
         <link href='http://fonts.googleapis.com/css?family=Holtwood+One+SC' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="/css/styles.css">
     </head>
     <body>
         <div class="container site">
@@ -17,7 +17,7 @@
             <h1 class="text-logo"><span class="bi-shop"></span> Burger Code <span class="bi-shop"></span></h1>
             
             <?php
-				require 'admin/database.php';
+				require '/admin/database.php';
 			 
                 echo '<nav>
                         <ul class="nav nav-pills" role="tablist">';
@@ -52,7 +52,7 @@
                     while ($item = $statement->fetch()) {
                         echo '<div class="col-md-6 col-lg-4">
                                 <div class="img-thumbnail">
-                                    <img src="images/' . $item['image'] . '" class="img-fluid" alt="...">
+                                    <img src="/images/' . $item['image'] . '" class="img-fluid" alt="...">
                                     <div class="price">' . number_format($item['price'], 2, '.', ''). ' €</div>
                                     <div class="caption">
                                         <h4>' . $item['name'] . '</h4>
