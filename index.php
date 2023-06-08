@@ -8,7 +8,7 @@ if(empty(gethostname())){
 if (str_contains($hostname,"app2")){
     $URL = "http://".gethostname();
 }else{
-    $URL = "http://serviceaccountapp1mch/conteneur"; 
+    $URL = "http://serviceaccountapp1mch/containeur"; 
 }
 ?>
 
