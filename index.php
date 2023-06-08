@@ -1,3 +1,17 @@
+<?php
+if(empty(gethostname())){
+    $hostname =getenv('WEBSITE_HOSTNAME');
+}else{
+    $hostname = gethostname();
+}
+
+if (str_contains($hostname,"app2")){
+    $URL = "http://".gethostname();
+}else{
+    $URL = "http://serviceaccountapp1mch/conteneur"; 
+}
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -9,7 +23,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
         <link href='http://fonts.googleapis.com/css?family=Holtwood+One+SC' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-        <link rel="stylesheet" href="http://web-app2-mhd-app-service.azurewebsites.net/css/styles.css">
+        <link rel="stylesheet" href=<?php echo $URL."/css/styles.css"?>>
     </head>
     <body>
         <div class="container site">
@@ -52,7 +66,7 @@
                     while ($item = $statement->fetch()) {
                         echo '<div class="col-md-6 col-lg-4">
                                 <div class="img-thumbnail">
-                                    <img src="http://web-app2-mhd-app-service.azurewebsites.net/images/' . $item['image'] . '" class="img-fluid" alt="...">
+                                    <img src="'. $URL .'/images/' . $item['image'] . '" class="img-fluid" alt="...">
                                     <div class="price">' . number_format($item['price'], 2, '.', ''). ' €</div>
                                     <div class="caption">
                                         <h4>' . $item['name'] . '</h4>
