@@ -4,7 +4,7 @@ $hostname = gethostname();
 if (strpos($hostname,"APP1") !== false){
     $URL = "https://serviceaccountapp1mch.blob.core.windows.net/container"; 
 }else{
-    $URL = "https://".getenv('WEBSITE_HOSTNAME');
+    $URL = "http://".getenv('WEBSITE_HOSTNAME');
 }
 ?>
 
