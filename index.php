@@ -1,14 +1,10 @@
 <?php
-if(empty(gethostname())){
-    $hostname =getenv('WEBSITE_HOSTNAME');
-}else{
-    $hostname = gethostname();
-}
+$hostname = gethostname();
 
-if (str_contains($hostname,"app2")){
-    $URL = "http://".gethostname();
+if (strpos($hostname,"APP1") !== false){
+    $URL = "https://serviceaccountapp1mch.blob.core.windows.net/container"; 
 }else{
-    $URL = "http://serviceaccountapp1mch/containeur"; 
+    $URL = "http://".getenv('WEBSITE_HOSTNAME');
 }
 ?>
 
